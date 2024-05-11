@@ -1,0 +1,14 @@
+Podman setup for development / running Bårdar Swing Clubs medlemssider in debug mode.
+
+The scripts currently are set up with running podman as root since the device i am using
+Orange Pi 5 doesn't have stable support for recent enough linux kernels to use podman as an user.
+
+It is expected that a medlemssider repo adapted for running in sqlite si checked out in a MemberService subdirectory.
+Some paths may need to be changed in the scripts.
+
+mkdir persistent
+cd persistent
+sqlite3 sqlitedb.db "VACUUM;" 
+
+If you still get errors about the database ensure that the file is readable and writable by the user id 
+(inside podman) that runs the server (or just chmod 666).
