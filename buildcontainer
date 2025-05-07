@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo podman build . -t memberservice
+podman build . -t memberservice
